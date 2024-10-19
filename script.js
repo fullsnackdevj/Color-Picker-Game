@@ -130,7 +130,7 @@ const stopColorRoll = function () {
 
 // random colors functionality
 startRoll.addEventListener('click', function () {
-  gameStatus.textContent = 'COLORS ARE NOW ROLLING..';
+  gameStatus.textContent = 'COLORS ARE ROLLING NOW...';
   startRoll.disabled = true;
   // Start rolling colors every 1000ms (1 second)
   intervalId = setInterval(startColorRoll, 100);
