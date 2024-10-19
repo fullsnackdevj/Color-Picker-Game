@@ -1,0 +1,153 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  /* background: linear-gradient(
+    135deg,
+    #ff9a9e 0%,
+    #fad0c4 50%,
+    #fad0c4 75%,
+    #fbc2eb 100%
+  ); */
+
+  background-color: darkslategray;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.scoreBoard {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.randomColor {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+/* radio button styles */
+
+.radio-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+  max-width: 400px;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Hide the original radio button */
+input[type='radio'] {
+  display: none;
+}
+
+/* Style the image as the label for the radio button */
+label {
+  cursor: pointer;
+}
+
+label img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Add a border when the radio button is selected */
+input[type='radio']:checked + label img {
+  filter: drop-shadow(0px 9.91px 7.78px rgba(0, 0, 0, 0.5));
+}
+
+.muted {
+  filter: saturate(0.5); /* 200% saturation */
+}
+
+/* .hideBtn {
+  /* display: none; */
+
+.hidden {
+  display: none;
+}
