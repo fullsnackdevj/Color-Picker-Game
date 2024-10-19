@@ -83,8 +83,13 @@ body {
     #fbc2eb 100%
   ); */
 
-  background-color: darkslategray;
+  /* background-color: darkslategray; */
   overflow: hidden;
+
+  background: url('./NEON.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .btn {

@@ -8,6 +8,8 @@ const overlay = document.querySelector('.overlay');
 
 const displayColor = document.querySelector('.displayColor');
 
+const gameStatus = document.querySelector('.status');
+
 // selecting player color functionality
 const selectedColor1 = document.querySelector('.color1');
 const selectedColor2 = document.querySelector('.color2');
@@ -17,6 +19,7 @@ const selectedColor5 = document.querySelector('.color5');
 const selectedColor6 = document.querySelector('.color6');
 
 const muteColors = function () {
+  gameStatus.textContent = 'LOCK OR CHANGE YOUR COLOR';
   selectedColor1.classList.add('muted');
   selectedColor2.classList.add('muted');
   selectedColor3.classList.add('muted');
@@ -26,6 +29,7 @@ const muteColors = function () {
 };
 
 const unMuteColors = function () {
+  gameStatus.textContent = 'PLEASE SELECT A COLOR';
   selectedColor1.classList.remove('muted');
   selectedColor2.classList.remove('muted');
   selectedColor3.classList.remove('muted');
@@ -116,16 +120,17 @@ const stopColorRoll = function () {
   clearInterval(intervalId); // Stop the interval
 
   if (lockedColor === randomColorNumber) {
-    console.log('You Win! 🏆', lockedColor, randomColorNumber);
+    gameStatus.textContent = 'Colors Matched! You Win! 🏆';
     playAgainButton.disabled = false;
   } else {
-    console.log('You Lose! 💥', lockedColor, randomColorNumber);
+    gameStatus.textContent = 'Sorry, You Lose! 💥';
     playAgainButton.disabled = false;
   }
 };
 
 // random colors functionality
 startRoll.addEventListener('click', function () {
+  gameStatus.textContent = 'COLORS ARE NOW ROLLING..';
   startRoll.disabled = true;
   // Start rolling colors every 1000ms (1 second)
   intervalId = setInterval(startColorRoll, 100);
@@ -142,6 +147,7 @@ changeColor.addEventListener('click', function () {
 });
 
 lockButton.addEventListener('click', function () {
+  gameStatus.textContent = 'COLOR LOCKED!';
   startRoll.disabled = false;
   changeColor.disabled = true;
   changeColor.disabled = true;
@@ -163,4 +169,5 @@ playAgainButton.addEventListener('click', function () {
   changeColor.disabled = true;
   changeColor.disabled = true;
   lockButton.disabled = true;
+  gameStatus.textContent = 'PLEASE SELECT A COLOR';
 });
